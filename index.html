@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles.css">
+    <title>Rock Paper Scissors Lizard Spock.</title>
+</head>
+<body>
+    <header><h1>Rock Paper Scissors Lizard Spock game </h1></header>
+    <div class="instructions">
+        <h2>How to Play</h2>
+        <p>Click on one of the choice buttons: Rock, Paper, Scissors, Lizard, or Spock.</p>
+        <p>"It's very simple. Scissors cuts paper, paper covers rock, rock crushes lizard,
+             lizard poisons Spock, Spock smashes scissors, scissors decapitates lizard, 
+             lizard eats paper, paper disproves Spock, Spock vaporizes rock,
+              and, as it always has, rock crushes scissors"</p>
+        <p>The winner of the round gets a point, loser gets nothing. First one to 15 wins.</p>
+    </div>
+    <br>
+    <section id="game-area">
+    <div class="score">
+        <p>Score: <span id="user-score">0</span> - <span id="computer-score">0</span></p>
+    </div>
+    <div class="choices">
+        <button class="choice" data-choice="rock"><p>Rock</p></i></button>
+        <button class="choice" data-choice="paper"><p>Paper</p></i></button>
+        <button class="choice" data-choice="scissors"><p>Scissors</p></i></button>
+        <button class="choice" data-choice="lizard"><p>Lizard</p></i></button>
+        <button class="choice" data-choice="spock"><p>Spock</p></i></button>
+         
+    </div>
+    <p id="result"></p>
+</div>
+</section>
+    <script src="assets/script.js"></script>
+</body>
+</html>
