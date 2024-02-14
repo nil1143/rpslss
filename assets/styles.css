@@ -9,18 +9,98 @@ body {
     padding: 0;
 }
 
+/*  MODALS  */
+
+ /* The Info Modal (background) */
+ .modal {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    
+  }
+
+  /* The info Modal Content/Box */
+  .modal-content {
+    background-color: #f6bebe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%; 
+    border-radius: 10px;
+  }
+
+  /* Reset Modal Content/Box */
+  .decision-modal {
+    display: none;
+    position: fixed; 
+    z-index: 1;
+    margin: auto;
+    left: 30%;
+    top: 20%;
+    width: 50%;
+    height: 120px; 
+    overflow: auto; 
+    background-color: rgb(32, 29, 29);
+    border-radius: 20px;
+    border: 3px solid rgb(63, 60, 63);
+    color: white
+  }
+
+
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Info Button */
+  .myBtn {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 5px;
+  }
+
+/* Info / Reset Button */
+  .fa-info, .fa-arrows-rotate {
+    font-size: 1.8rem
+  }
+
+  /* GAME CONTENT */
+
+
+/* Game Header */
+
 h1 {
     color: #333;
     margin-top: 2rem;
     font-size: 2.25rem;
     text-transform: uppercase;
 }
-
+/* Score string */
 .score {
     font-size: 2rem;
     margin-top: 1rem;
 }
 
+/* Choice buttons */
 .choices {
     display: flex;
     flex-wrap: wrap;
@@ -33,21 +113,22 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 0.875rem;
+    font-size: 1rem;
     padding: 10px 20px;
-    margin: 10px;
+    margin: 5px;
     cursor: pointer;
     border: 2px solid #333;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     transition: background-color 0.3s, transform 0.2s;
-    width: 150px;
+    width: 100px;
     height: 80px;
 }
 
-.choice p {
+.choice {
     font-weight: bold;
+    font-size: 1.25rem
 }
 
 .choice:hover {

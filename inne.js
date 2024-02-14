@@ -1,3 +1,57 @@
+let petNames = {
+    dog: 'Fido',
+    cat: 'Max',
+    fish: 'Bubbles',
+    python: 'Mr. Slithers',
+  }
+  
+  let pairs = Object.entries(petNames);
+  for (let pair of pairs){
+    console.log(pair[1], 'is a', pair[0]);
+  }
+
+
+// 
+
+
+function buildTableData() {
+    let tbody = document.getElementsByTagName('tbody');
+    let rows = tbody.children;
+    
+    let reviews = []
+
+    
+    for (let row in rows) {
+        let tableData = {};
+        let cells = rows.children
+        tableData.name = cells[0].textContent
+        tableData.rating = cells[1].textContent
+        tableData.review = cells[2].textContent
+        reviews.push(tableData)
+    }
+    return reviews
+
+}
+let data = buildTableData();
+console.log(data)
+
+
+
+
+
+
+//   FOR
+
+function changeCards() {
+    let cards = document.getElementsByClassName('card')
+   for(let i = 0; i<cards.length; i++){ 
+    cards[i].style.backgroundColor = "red"
+       
+   }
+}
+// 
+
+
 ////////////////////////
 
 
@@ -13,12 +67,12 @@ const span = document.getElementsByClassName("close")[0];
 // When the user clicks on info button, open the modal
 btn.onclick = function() {
   modal.style.display = "block";
-};
+}
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
-};
+}
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -26,17 +80,17 @@ window.onclick = function(event) {
     modal.style.display = "none";
 
   }
-};
+} 
 
 // INSTRUCTION ONLOAD w Timeout
 function modalOff() {
-    modal.style.display = 'none';
+    modal.style.display = 'none'
 }
 
 window.onload = function onOff() {
     modal.style.display = 'block';
-    window.setTimeout(modalOff, 3000);
-};
+    window.setTimeout(modalOff, 3000)
+}
 
 
 const choices = document.querySelectorAll('.choice');
@@ -48,20 +102,20 @@ let userScore = 0;
 let computerScore = 0;
 // Restart btn DZIALAAAAAAAAAAAAA
 // TERAZ IF ELSE CZY NA PEWNO
-const decisionModal = document.getElementById('decision-modal');
-const resetIcon = document.getElementById('restartb');
+const decisionModal = document.getElementById('decision-modal')
+const resetIcon = document.getElementById('restartb')
 resetIcon.onclick = function(){
     decisionModal.style.display = "block";
-};
+}
 
 
-const cancelBtn = document.getElementById('cancel');
+const cancelBtn = document.getElementById('cancel')
 cancelBtn.onclick = function() {
     decisionModal.style.display = "none";
-};
+}
 
 
-const restartBtn = document.getElementById("restartBtn");
+const restartBtn = document.getElementById("restartBtn")
 
 restartBtn.onclick = function() {
     userScore = 0;
@@ -69,8 +123,8 @@ restartBtn.onclick = function() {
     resultMessage.textContent = '';
     userScoreSpan.textContent = '0';
     computerScoreSpan.textContent = '0';
-    decisionModal.style.display = "none";
-};
+    decisionModal.style.display = "none"
+}
 
 // 
 function getComputerChoice() {
@@ -90,10 +144,10 @@ function determineWinner(userChoice, computerChoice) {
         (userChoice === 'spock' && (computerChoice === 'rock' || computerChoice === 'scissors'))
     ) {
         // return `You win! You chose ${userChoice}, computer chose ${computerChoice}.`;
-        return `You win! You chose ${userChoice}, computer chose ${computerChoice}.`;
+        return resultMessage.innerHTML = `You win! You chose ${userChoice}, computer chose ${computerChoice}.`
     } else {
         // return `Computer wins! Computer chose ${computerChoice}, you chose ${userChoice}.`;
-        return `Computer wins! Computer chose ${computerChoice}, you chose ${userChoice}.`;
+        return resultMessage.innerHTML = `Computer wins! Computer chose ${computerChoice}, you chose ${userChoice}.`
     }
 }
 
@@ -125,7 +179,7 @@ function endGame() {
         resultMessage.textContent = `Game over! It's a draw with a score of ${userScore}-${computerScore}.`;
     }
 
-    choices.forEach(choice => choice.removeEventListener('click', true));
+    choices.forEach(choice => choice.removeEventListener('click', handleClick));
 }
 
 function userChoiceHandler(userChoice) {

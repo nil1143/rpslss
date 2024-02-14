@@ -4,34 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/styles.css">
-    <title>Rock Paper Scissors Lizard Spock.</title>
+    <title>Rock Paper Scissors Lizard Spock</title>
+    <script src="https://kit.fontawesome.com/08ba1e35c6.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header><h1>Rock Paper Scissors Lizard Spock game </h1></header>
-    <div class="instructions">
-        <h2>How to Play</h2>
-        <p>Click on one of the choice buttons: Rock, Paper, Scissors, Lizard, or Spock.</p>
-        <p>"It's very simple. Scissors cuts paper, paper covers rock, rock crushes lizard,
-             lizard poisons Spock, Spock smashes scissors, scissors decapitates lizard, 
-             lizard eats paper, paper disproves Spock, Spock vaporizes rock,
-              and, as it always has, rock crushes scissors"</p>
-        <p>The winner of the round gets a point, loser gets nothing. First one to 15 wins.</p>
+     <!-- Trigger/Open The Modal and Restart Button -->
+    <div class="buttons">
+<button id="myBtn" class="myBtn"><i class="fa-solid fa-info"></i><br>Info</button>
+<button id="restartb" class="myBtn"><i class="fa-solid fa-arrows-rotate"></i><br>Reset</button>
     </div>
-    <br>
+<br>
+    <!-- Reset Button Modal -->
+<div id="decision-modal" class="decision-modal decision-modal-content">
+    <div class="decision-modal-content">
+        <h2>ARE YOU SURE?</h2>
+        <button id="restartBtn" class="restart-btn">YES</button>
+        <button id="cancel" class="restart-btn">Cancel</button>
+    </div>
+</div>
+
+    <!-- The Info Modal -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+        <h3>How to Play</h3>
+        <p>    
+        Click on one of the choice buttons: Rock, Paper, Scissors, Lizard, or Spock.
+        <br>
+        <h4>Rock WINS vs Scissors & Lizard</h4>
+        <h4>Paper WINS vs Rock & Spock</h4>
+        <h4>Scissors WINS vs Paper & Lizard</h4>
+        <h4>Lizard WINS vs Spock & Paper</h4>
+        <h4>Spock WINS vs Rock and Scissors</h4>
+        <p>The winner of the round gets a point, loser gets nothing. First one to 15 wins.-</p>
+  </div>
+</div>
+    <!--Game window  -->
+
     <section id="game-area">
+        <header><h1>Rock Paper Scissors Lizard Spock game </h1></header>
     <div class="score">
         <p>Score: <span id="user-score">0</span> - <span id="computer-score">0</span></p>
     </div>
     <div class="choices">
-        <button class="choice" data-choice="rock"><p>Rock</p></i></button>
-        <button class="choice" data-choice="paper"><p>Paper</p></i></button>
-        <button class="choice" data-choice="scissors"><p>Scissors</p></i></button>
-        <button class="choice" data-choice="lizard"><p>Lizard</p></i></button>
-        <button class="choice" data-choice="spock"><p>Spock</p></i></button>
-         
+        <div class="choice" data-choice="rock"><h4>Rock</h4></div>
+        <div class="choice" data-choice="paper"><h4>Paper</h4></div>
+        <div class="choice" data-choice="scissors"><h4>Scissors</h4></div>
+        <div class="choice" data-choice="lizard"><h4>Lizard</h4></div>
+        <div class="choice" data-choice="spock"><h4>Spock</h4></div>
     </div>
-    <p id="result"></p>
-</div>
+    <!-- Result -->
+    <div  id="result"></div>
 </section>
     <script src="assets/script.js"></script>
 </body>
